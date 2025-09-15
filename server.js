@@ -8,10 +8,10 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Serve static files from dist
+// Serve static files from the Vite build
 app.use(express.static(path.join(__dirname, "dist")));
 
-// Serve index.html for all routes
+// Serve index.html for all routes (React SPA routing)
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
